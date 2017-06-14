@@ -72,12 +72,10 @@ module.exports.LootTable = class LootTable {
     }
 
     tryToDropEachItem(comparisonValue) {
-        if(!comparisonValue) throw new Error(`Must provide a valid comparison value to attempt dropping each item.`);
-
         const { choices, alwaysDrop } = this._prepareArray(this.choices);
 
-        return alwaysDrop.concat(compact(choices.map(({ result, chance }) => {
-            const randomValue = random(0, comparisonValue);
+        return alwaysDrop.concat(compact(choices.map(({ result, chance, maxChance }) => {
+            const randomValue = random(0, maxChance || comparisonValue || 1);
             if(chance >= randomValue) return result;
             return null;
         })));
