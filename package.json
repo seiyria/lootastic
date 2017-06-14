@@ -1,0 +1,40 @@
+{
+  "name": "lootastic",
+  "version": "1.0.0",
+  "description": "a loot rolling system",
+  "main": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/sample"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seiyria/lootastic.git"
+  },
+  "keywords": [
+    "loot",
+    "items",
+    "roller",
+    "drops",
+    "drop",
+    "roll",
+    "rpg",
+    "d&d",
+    "table",
+    "random"
+  ],
+  "author": "Kyle Kemp <kyle@seiyria.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seiyria/lootastic/issues"
+  },
+  "homepage": "https://github.com/seiyria/lootastic#readme",
+  "dependencies": {
+    "lodash.clonedeep": "^4.5.0",
+    "lodash.compact": "^3.0.1",
+    "lodash.random": "^3.2.0",
+    "weighted-randomly-select": "^1.0.4"
+  }
+}
