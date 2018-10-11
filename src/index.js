@@ -33,14 +33,13 @@ module.exports.LootTable = class LootTable {
 
     _prepareArray() {
         const alwaysDrop = [];
-        const choices = compact(this.choices).map(x => {
+        const choices = compact(this.choices.map(x => {
             if(x.chance <= 0) {
                 alwaysDrop.push(x.result);
                 return null;
             }
-            x.chance += this.rollModifier;
-            return { result: x.result, chance: x.chance + this.rollModifier };
-        });
+            return { result: x.result, chance: x.chance + this.rollModifier, maxChance: x.maxChance };
+        }));
 
         return { alwaysDrop, choices };
     }
