@@ -32,7 +32,6 @@
   },
   "homepage": "https://github.com/seiyria/lootastic#readme",
   "dependencies": {
-    "lodash.clonedeep": "^4.5.0",
     "lodash.compact": "^3.0.1",
     "lodash.random": "^3.2.0",
     "weighted-randomly-select": "^1.0.4"

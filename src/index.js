@@ -2,7 +2,6 @@
 const Randomly = require('weighted-randomly-select');
 const compact = require('lodash.compact');
 const random = require('lodash.random');
-const cloneDeep = require('lodash.clonedeep');
 
 module.exports.LootFunctions = {
     WithReplacement: 'chooseWithReplacement',
@@ -34,14 +33,14 @@ module.exports.LootTable = class LootTable {
 
     _prepareArray() {
         const alwaysDrop = [];
-        const choices = compact(cloneDeep(this.choices).map(x => {
+        const choices = compact(this.choices).map(x => {
             if(x.chance <= 0) {
                 alwaysDrop.push(x.result);
                 return null;
             }
             x.chance += this.rollModifier;
-            return x;
-        }));
+            return { result: x.result, chance: x.chance + this.rollModifier };
+        });
 
         return { alwaysDrop, choices };
     }
