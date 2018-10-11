@@ -1,6 +1,6 @@
 {
   "name": "lootastic",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "a loot rolling system",
   "main": "src/index.js",
   "directories": {
